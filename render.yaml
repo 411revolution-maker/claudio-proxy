@@ -1,0 +1,13 @@
+# Render.com config — Blueprint deploy
+services:
+  - type: web
+    name: claudio-netease-proxy
+    env: node
+    region: singapore  # Singapore — close to China
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: NE_COOKIE
+        sync: false
